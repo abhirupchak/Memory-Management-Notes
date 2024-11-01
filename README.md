@@ -124,7 +124,7 @@ int main()
     
     return 0;
 }
-took this code from here ![Pointer to an array](https://www.geeksforgeeks.org/pointer-array-array-pointer/)
+took this code from here https://www.geeksforgeeks.org/pointer-array-array-pointer/
 
 For more detail, look at this: https://www.geeksforgeeks.org/pointers-vs-references-cpp/
 
