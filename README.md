@@ -68,7 +68,10 @@ Note that a is pointing to an object not any value thats why we have used this "
 
 ![reference](https://github.com/user-attachments/assets/cbc71411-1dba-48c1-bc2e-019741ab0560)
 
-When we declare as a reference it means that both the original(a) and the reference(x) become the same thing. So any operation done to a will also happen to x and vice versa because they are same. Basically x and a have the.
+When we declare as a reference it means that both the original(a) and the reference(x) become the same thing. So any operation done to a will also happen to x and vice versa because they are same. A pointer has its own memory address and size on the stack, whereas a reference shares the same memory address with the original variable and takes up no space on the stack.
+You can have a pointer to pointer (known as a double pointer) offering extra levels of indirection, whereas references only offer one level of indirection.
+
+For more detail, look at this: https://www.geeksforgeeks.org/pointers-vs-references-cpp/
 
 ![referencevspointer](https://github.com/user-attachments/assets/c3d10822-77b4-4123-8b2a-f21481addc1c)
 
