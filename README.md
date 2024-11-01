@@ -71,6 +71,61 @@ Note that a is pointing to an object not any value thats why we have used this "
 When we declare as a reference it means that both the original(a) and the reference(x) become the same thing. So any operation done to a will also happen to x and vice versa because they are same. A pointer has its own memory address and size on the stack, whereas a reference shares the same memory address with the original variable and takes up no space on the stack.
 You can have a pointer to pointer (known as a double pointer) offering extra levels of indirection, whereas references only offer one level of indirection.
 
+**Some Points about Pointers,Pointer Variables, Declaration and Initialisation**
+
+So basically when we declare something like this:
+
+- int a = b ; we are telling the 16 bit compiler to reserve 2 bytes for this.
+
+Now we cannot add more than 2 bits into this address. For example, we do a = 4.5 this is telling compiler to store 4 bytes in 2 bytes.
+There will be an output but it will be nonsensical.
+
+- int * a = &b ; this is storing address of b in a and b is of int data type.
+  For print statements we have something like this:
+  printf("%d",*a)
+  This will tell us value of the address to which pointer is pointing to.
+  So * is used differently in both cases.
+- if we declare something like this,
+
+  char s[3] = {'a','b','c'}
+  char *p = s
+  Here p will always store base address of s.
+
+  Whenever we use string(basically array of chars) or array and whenever we mention their variable name (like s here) it always means we are referring to their base address.
+
+- taking the same example as above but now i am making p a pointer array which will point to every single value in s,
+
+  // C program to understand difference between 
+// pointer to an integer and pointer to an
+// array of integers. 
+#include<stdio.h>
+
+int main()
+{
+    // Pointer to an integer
+    int *p; 
+    
+    // Pointer to an array of 5 integers
+    int (*ptr)[5];  //declaring an array of pointers
+    int arr[5];
+    
+    // Points to 0th element of the arr.
+    p = arr;
+    
+    // Points to the whole array arr.
+    ptr = &arr; 
+    
+    printf("p = %p, ptr = %p\n", p, ptr);
+    
+    p++; 
+    ptr++;      // iterating the array of pointers
+    
+    printf("p = %p, ptr = %p\n", p, ptr); // dont't focus on this syntax too much
+    
+    return 0;
+}
+took this code from here ![Pointer to an array](https://www.geeksforgeeks.org/pointer-array-array-pointer/)
+
 For more detail, look at this: https://www.geeksforgeeks.org/pointers-vs-references-cpp/
 
 ![referencevspointer](https://github.com/user-attachments/assets/c3d10822-77b4-4123-8b2a-f21481addc1c)
