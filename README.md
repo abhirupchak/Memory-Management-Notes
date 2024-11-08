@@ -172,10 +172,10 @@ For the x<sup>n-1</sup> part, we are basically calling the power function again 
 So if we call function as pow(5,3) output ends up being 5*5*5*1=125
 
 Now if you remember the stack memory in RAM you should be able to relate that all these values will be stored in stack in the following way:
-1
-5
-5
-5
+1<br>
+5<br>
+5<br>
+5<br>
 
 Then they are taken out in LIFO format and multiplied as in function. Then after function is finished running the memory locations are killed in RAM since it is local(global stored in dynamic memory).
 
