@@ -126,6 +126,63 @@ int main()
 }
 took this code from here https://www.geeksforgeeks.org/pointer-array-array-pointer/
 
+**Stack and Recursion**
+
+Recursion is a programming pattern that is useful in situations when a task can be naturally split into several tasks of the same kind, but simpler. Or when a task can be simplified into an easy action plus a simpler variant of the same task. Or, as we’ll see soon, to deal with certain data structures.
+
+Two ways of thinking
+For something simple to start with – let’s write a function pow(x, n) that raises x to a natural power of n. In other words, multiplies x by itself n times.
+
+pow(2, 2) = 4
+pow(2, 3) = 8
+pow(2, 4) = 16
+There are two ways to implement it.
+
+Iterative thinking: the for loop:
+
+    function pow(x, n) {
+      let result = 1;
+    
+      // multiply result by x n times in the loop
+      for (let i = 0; i < n; i++) {
+        result *= x;
+      }
+    
+      return result;
+    }
+    
+    alert( pow(2, 3) ); // 8
+
+
+
+Recursive thinking: simplify the task and call self:
+
+    function pow(x, n) {
+      if (n == 1) {
+        return x;
+      } else {
+        return x * pow(x, n - 1);
+      }
+    }
+    alert( pow(2, 3) ); // 8
+
+The language is java but concept remains same as in python, we are repeatedly calling the same function(recursion) to find x^n which can also be written as x*x<sup>n-1</sup>.
+For the x<sup>n-1</sup> part, we are basically calling the power function again and again each time multiplying x once more until n becomes 1 where we return 1.
+
+So if we call function as pow(5,3) output ends up being 5*5*5*1=125
+
+Now if you remember the stack memory in RAM you should be able to relate that all these values will be stored in stack in the following way:
+1
+5
+5
+5
+
+Then they are taken out in LIFO format and multiplied as in function. Then after function is finished running the memory locations are killed in RAM since it is local(global stored in dynamic memory).
+
+taken from here: https://javascript.info/recursion#two-ways-of-thinking
+
+
+
 For more detail, look at this: https://www.geeksforgeeks.org/pointers-vs-references-cpp/
 
 ![referencevspointer](https://github.com/user-attachments/assets/c3d10822-77b4-4123-8b2a-f21481addc1c)
